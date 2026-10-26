@@ -1,0 +1,90 @@
+
+<!--
+  Kendri Tatis 100263465
+  Rodolfo Starlyn Espinal Hilario 100100513
+  Aneudy de la Cruz 100465614
+  César Adrián Aybar Montes De Oca 100692670
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quisqueya Noticias · Buscador de Noticias</title>
+
+  <!-- PASO 2: enlazamos el archivo de estilos -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- 1. EL ENCABEZADO (estilo periódico) -->
+  <header class="portada">
+    <div class="franja"><span></span><span></span><span></span></div>
+    <div class="portada__contenido">
+      <p class="fecha" id="fecha"></p>
+      <h1>Quisqueya <em>Noticias</em></h1>
+      <p class="lema">Busca un tema y lee lo más reciente</p>
+      <button id="btnTema" class="btn-tema" onclick="cambiarTema()" title="Cambiar tema">🌙</button>
+    </div>
+  </header>
+
+  <main class="contenedor">
+
+    <!-- 2. EL FORMULARIO DE BÚSQUEDA -->
+    <form id="formulario" class="buscador" onsubmit="buscar(event)">
+      <input type="text" id="termino" placeholder="Ej: tecnología, deportes, política..." required>
+      <button type="submit" class="btn">Buscar</button>
+    </form>
+
+    <!-- 3. EL TEMAS RÁPIDOS (se generan desde script.js) -->
+    <div class="categorias" id="categorias"></div>
+
+    <!-- 4. LOS MENSAJES Y RESULTADOS -->
+    <p id="mensaje" class="mensaje"></p>
+    <section id="resultados" class="resultados"></section>
+
+    <!-- 5. LA PAGINACIÓN -->
+    <nav id="paginacion" class="paginacion" style="display:none;">
+      <button id="btnAnterior" class="btn" onclick="cambiarPagina(-1)">← Anterior</button>
+      <span id="infoPagina"></span>
+      <button id="btnSiguiente" class="btn" onclick="cambiarPagina(1)">Siguiente →</button>
+    </nav>
+
+    <!-- 6. FUENTES DOMINICANAS (enlaces de referencia) -->
+    <aside class="fuentes">
+      <h2>Fuentes dominicanas</h2>
+      <div class="fuentes__grupo">
+        <h3> Periódicos</h3>
+        <a href="https://www.diariolibre.com" target="_blank" rel="noopener">Diario Libre</a>
+        <a href="https://eldia.com.do" target="_blank" rel="noopener">El Día</a>
+        <a href="https://www.elcaribe.com.do" target="_blank" rel="noopener">El Caribe</a>
+        <a href="https://listindiario.com" target="_blank" rel="noopener">Listín Diario</a>
+        <a href="https://hoy.com.do" target="_blank" rel="noopener">Hoy</a>
+      </div>
+      <div class="fuentes__grupo">
+        <h3> Béisbol</h3>
+        <a href="https://lidom.com" target="_blank" rel="noopener">LIDOM (Liga de Béisbol Dominicano)</a>
+      </div>
+      <div class="fuentes__grupo">
+        <h3> Política</h3>
+        <a href="https://jce.gob.do" target="_blank" rel="noopener">Junta Central Electoral</a>
+      </div>
+      <div class="fuentes__grupo">
+        <h3> Tecnología</h3>
+        <a href="https://indotel.gob.do" target="_blank" rel="noopener">INDOTEL</a>
+      </div>
+    </aside>
+
+  </main>
+
+  <footer class="pie">
+    Datos: GNews API · Los ejemplos ilustrativos son solo demostración · Material de clase: Fundamentos de API
+  </footer>
+
+  <!-- PASO 3: enlazamos el archivo de JavaScript (al final del body) -->
+  <script src="script.js"></script>
+</body>
+</html>
